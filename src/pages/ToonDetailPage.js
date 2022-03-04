@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ToonList from "../components/ToonList";
 import NotFoundPage from "./NotFoundPage";
+import VotesSection from "../components/VotesSection";
+import AddToonForm from "../components/AddToonForm";
 
 const ToonDetailPage = () => {
   const { id } = useParams();
@@ -32,7 +34,8 @@ const ToonDetailPage = () => {
 
   return (
     <React.Fragment>
-      <p>This cartoon character has received {toonInfo.votes} votes.</p>
+      
+      <VotesSection id={id} votes={toonInfo.votes} setToonInfo={setToonInfo} /><hr/>
 
       <h4 className="text-info">
         {toonInfo.id}. {toonInfo.firstName} {toonInfo.lastName}
@@ -66,6 +69,7 @@ const ToonDetailPage = () => {
           </tr>
         </tbody>
       </table>
+      <AddToonForm />
     </React.Fragment>
   );
 };
