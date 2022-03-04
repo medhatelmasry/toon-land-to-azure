@@ -32,6 +32,6 @@ jobs:
     - name: 'Deploy static web app to Azure blob storage'
       uses: lauchacarro/Azure-Storage-Action@v1.0
       with:
-        enabled-static-website: 'true'
-        folder: './'
+        source_dir: 'build'
+        container_name: '$web'
         connection-string: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }} 
