@@ -29,8 +29,8 @@ jobs:
         # deploy to Azure Web App.
         npm install
         npm run build --if-present
-    - name: 'Deploy static web app to Azure blob storage'
-      uses: lauchacarro/Azure-Storage-Action@v1.0
+    - name: 'Deploy react app to Azure blob storage'
+      uses: bacongobbler/azure-blob-storage-upload@v1.1.1
       with:
         source_dir: 'build'
         container_name: '$web'
